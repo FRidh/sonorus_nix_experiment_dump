@@ -216,6 +216,9 @@ in rec {
     inherit audio database;
     src = ./sonorus.py;
     propagatedBuildInputs = [ acoustics odo pandas blaze ];
+    # Substitute the variables audio and database
+    postBuild = ''
+      substituteAllInPlace *.py
   };
 
   synthesis = pythonModule {
