@@ -1,0 +1,5 @@
+{
+    "doppler" : {
+        "purge_zeros"   :   true
+    }
+}

@@ -1,0 +1,11 @@
+#! /bin/sh
+
+# Load recordings in store
+
+FOLDER=$(readlink -f ../../../../data/raw/recordings/*.hdf5)
+
+for file in `ls $FOLDER`
+do
+  echo "Prefetching file $file"
+  nix-prefetch-url file://$file
+done;

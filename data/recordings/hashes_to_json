@@ -1,0 +1,18 @@
+#! /usr/bin/env nix-shell
+#! nix-shell -i python3 -p python35 --pure
+
+# Write hashes of recordings in JSON format
+
+import json
+
+HASHES_IN = "../../../../data/raw/recordings/sha256"
+HASHES_OUT = "recordings.json"
+
+d = {}
+
+with open(HASHES_IN, 'r') as f:
+  for line in f.readlines():
+    hash, name = line.split()
+    d[name] = hash
+with open(HASHES_OUT, 'w') as f:
+  json.dump(d, f, sort_keys=True, indent=True)

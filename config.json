@@ -1,0 +1,5 @@
+{
+  "files" : {
+    "database" : "data/preprocessed/database/sonair.sqlite3"
+  }
+}
